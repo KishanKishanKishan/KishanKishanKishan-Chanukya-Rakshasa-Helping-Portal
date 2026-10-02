@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Protection Laws Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f4f7fb;
+    transition:0.3s;
+}
+
+.dark{
+    background:#1e1e1e;
+    color:white;
+}
+
+header{
+    background:#c0392b;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:20px auto;
+    padding:10px;
+}
+
+/* TOP BAR */
+.top-bar{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin:20px 0;
+}
+
+input, select, button{
+    padding:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+button{
+    background:#2c3e50;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:15px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    border-left:6px solid #e74c3c;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.dark .card{
+    background:#2c2c2c;
+}
+
+/* HIGHLIGHT */
+.highlight{
+    background:yellow;
+    color:black;
+    font-weight:bold;
+}
+
+/* NO RESULT */
+#noResult{
+    text-align:center;
+    color:red;
+    display:none;
+}
+
+footer{
+    text-align:center;
+    padding:15px;
+    background:#2c3e50;
+    color:white;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Protection Laws Portal</h1>
+</header>
+
+<div class="container">
+
+<!-- CONTROLS -->
+<div class="top-bar">
+    <input type="text" id="searchInput" placeholder="Search (e.g. 316, cheating, theft)">
+    
+    <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="women">Women</option>
+        <option value="children">Children</option>
+        <option value="fraud">Financial Fraud</option>
+        <option value="student">Student</option>
+        <option value="health">Health</option>
+        <option value="environment">Pollution/Ecology/Environment</option>
+        <option value="police">Police Misbehavior</option>
+    </select>
+
+    <button onclick="toggleDark()">🌙 Dark</button>
+</div>
+
+<div id="noResult">No results found</div>
+
+<!-- GRID -->
+<div class="grid">
+
+<!-- WOMEN -->
+<div class="card women"><b>Section 76</b> – Assault to Disrobe Woman:-<br>Punishes forcing a woman to remove clothes.</div>
+<div class="card women"><b>Section 77</b> – Voyeurism:-<br>Watching or recording a woman in private without consent.</div>
+<div class="card women"><b>Section 78</b> – Stalking:-<br>Following or contacting a woman repeatedly against her will.</div>
+<div class="card women"><b>Section 79</b> – Insulting Modesty of Woman:-<br>Offensive words or gestures.</div>
+<div class="card women"><b>Section 80</b> – Dowry Death:-<br>Death due to dowry harassment.</div>
+<div class="card women"><b>Section 81</b> – Cruelty by Husband or Relatives:-<br>Mental or physical harassment.</div>
+
+<!-- CHILDREN -->
+<div class="card children"><b>Section 82</b> – Kidnapping:-<br>Taking a child or person without consent.</div>
+<div class="card children"><b>Section 83</b> – Abduction:-<br>br>Forcing or deceiving movement.</div>
+<div class="card children"><b>Section 84</b> – Trafficking:-<br>Buying/selling humans for exploitation.</div>
+<div class="card children"><b>Section 85</b> – Exploitation of Trafficked Child:-<br>Severe punishment.</div>
+<div class="card children"><b>Section 86</b> – Procuration of Minor Girl:-<br>Inducing minor for illegal activity.</div>
+<div class="card children"><b>Section 87</b> – Selling Minor:-<br>Selling child for immoral purposes.</div>
+<div class="card children"><b>Section 88</b> – Buying Minor:-<br>Buying child for exploitation.</div>
+
+<!-- FINANCIAL -->
+<div class="card fraud"><b>Section 316</b> – Cheating:-<br>Deceiving for money or advantage.</div>
+<div class="card fraud"><b>Section 317</b> – Cheating by Personation:-<br>Pretending to be someone else.</div>
+<div class="card fraud"><b>Section 318</b> – Misappropriation:-<br>Using others' property illegally.</div>
+<div class="card fraud"><b>Section 319</b> – Breach of Trust:-<br>Misusing entrusted property.</div>
+<div class="card fraud"><b>Section 320</b> – Breach by Public Servant:-<br>Stricter punishment.</div>
+<div class="card fraud"><b>Section 321</b> – Receiving Stolen Property:-<br>Keeping stolen goods.</div>
+<div class="card fraud"><b>Section 322</b> – Dishonest Receiving:-<br>Handling stolen goods knowingly.</div>
+<div class="card fraud"><b>Section 336</b> – Forgery:-<br>Creating fake documents.</div>
+<div class="card fraud"><b>Section 337</b> – Forgery of Security:-<br>Forging important documents.</div>
+<div class="card fraud"><b>Section 338</b> – Using Forged Document:-<br>Using fake documents.</div>
+<div class="card fraud"><b>Section 340</b> – Counterfeiting:-<br>Making fake money.</div>
+<div class="card fraud"><b>Section 341</b> – Using Fake Currency:-<br>Using counterfeit notes.</div>
+
+<!-- STUDENT -->
+<div class="card student"><b>Section 115</b> – Voluntarily Causing Hurt:-<br>Physical harm like fights or ragging injuries.</div>
+<div class="card student"><b>Section 118</b> – Grievous Hurt:-<br>Serious injuries or permanent damage.</div>
+<div class="card student"><b>Section 126</b> – Wrongful Restraint:-<br>Stopping movement freely.</div>
+<div class="card student"><b>Section 127</b> – Wrongful Confinement:-<br>Illegal detention or locking.</div>
+<div class="card student"><b>Section 131</b> – Assault / Criminal Force:-<br>Threat or use of force.</div>
+<div class="card student"><b>Section 351</b> – Criminal Intimidation:-<br>Threatening behavior.</div>
+<div class="card student"><b>Section 303</b> – Theft:-<br>Stealing belongings.</div>
+<div class="card student"><b>Section 316</b> – Cheating:-<br>Exam fraud or scams.</div>
+<div class="card student"><b>Section 352</b> – Intentional Insult:-<br>Provoking fights through insults.</div>
+<div class="card student"><b>Section 356</b> – Defamation:-<br>Damaging reputation with false claims.</div>
+
+<!--Health-->
+<div class="card health"><b>Section 106</b> – Causing Death by Negligence:-<br>Death caused due to careless act (medical negligence, accidents).</div>
+<div class="card ealth"><b>Section 115</b> – Causing Hurt:-<br>Physical injury to a person.</div>
+<div class="card health"><b>Section 117</b> – Causing Hurt by Dangerous Means:-<br>Injury using harmful substances, poison, etc.</div>
+<div class="card health"><b>Section 118</b> – Grievous Hurt:-<br>Serious injuries affecting health permanently.</div>
+<div class="card health"><b>Section 125</b> – Act Endangering Life or Personal Safety:-<br>Careless acts that risk human life (unsafe medical practices).</div>
+<div class="card health"><b>Section 269</b> – Negligent Act Likely to Spread Infection:-<br>Spreading diseases due to negligence.</div>
+<div class="card health"><b>Section 270</b> – Malignant Act Likely to Spread Infection:-<br>Intentional spread of dangerous diseases.</div>
+<div class="card health"><b>Section 274</b> – Adulteration of Drugs:-<br>Mixing harmful substances in medicines.</div>
+<div class="card health"><b>Section 275</b> – Sale of Adulterated Drugs:-<br>Selling unsafe or fake medicines.</div>
+<div class="card health"><b>Section 276</b> – Sale of Drugs as Different Drug:-<br> wrong or fake medicines.</div>
+
+<!--Pollution/Ecology/Environment-->
+<div class="card environment"><b>Section 268</b> – Public Nuisance:-<br>Causing harm or inconvenience to public (smoke, noise, pollution).</div>
+<div class="card environment"><b>Section 269</b> – Negligent Act Spreading Infection:-<br>Careless acts spreading disease (pollution affecting health).</div>
+<div class="card environment"><b>Section 270</b> – Malignant Act Spreading Infection:-<br>Intentional spread of harmful disease.</div>
+<div class="card environment"><b>Section 277</b> – Fouling Water:-<br>Polluting rivers, lakes, or water sources.</div>
+<div class="card environment"><b>Section 278</b> – Making Atmosphere Harmful:-<br>Air pollution causing health problems.</div>
+<div class="card environment"><b>Section 284</b> – Negligent Handling of Toxic Substances:-<br>Careless use of chemicals or hazardous materials.</div>
+
+<!--Police Misbehavior-->
+<div class="card police"><b>section 166</b> – Public Servant Disobeying Law:- <br>Police not following legal procedures or rules.</div>
+<div class="card police"><b>Section 167</b> – Public Servant Framing Incorrect Document:- <br>Making false records or FIR.</div>
+<div class="card Police"><b>Section 194</b> – False Evidence:- <br>Creating fake evidence to harm someone.</div>
+<div class="card police"><b>Section 195</b> – Fabricating False Evidence:- <br>Intentionally preparing false proof.</div>
+<div class="card police"><b>Section 220</b> – Wrongful Confinement by Public Servant:- <br>Illegal detention by police.</div>
+<div class="card police"><b>Section 221</b> – Intentional Omission to Apprehend:- <br>Letting an accused go intentionally.</div>
+<div class="card police"><b>Section 222</b> – Intentional Disobedience to Save Person:- <br>Helping accused escape punishment.</div>
+<div class="card police"><b>Section 230</b> – Personating Public Servant:- <br>Fake police pretending to be real officers.</div>
+<div class="card police"><b>Section 351</b> – Criminal Intimidation:-<br>Threatening or pressuring a person.</div>
+</div>
+</div>
+
+<footer>
+    <p>© 2026 Protection Laws Portal</p>
+</footer>
+
+<script>
+
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+const cards = document.querySelectorAll(".card");
+const noResult = document.getElementById("noResult");
+
+// SEARCH + FILTER
+function filterData(){
+    let search = searchInput.value.toLowerCase();
+    let category = categoryFilter.value;
+    let count = 0;
+
+    cards.forEach(card=>{
+        let text = card.textContent.toLowerCase();
+
+        // reset text safely
+        card.innerHTML = card.textContent;
+
+        let matchSearch = text.includes(search);
+        let matchCategory = (category==="all" || card.classList.contains(category));
+
+        if(matchSearch && matchCategory){
+            card.style.display="block";
+            count++;
+
+            if(search){
+                let reg = new RegExp(`(${search})`, "gi");
+                card.innerHTML = card.textContent.replace(reg, `<span class="highlight">$1</span>`);
+            }
+
+        }else{
+            card.style.display="none";
+        }
+    });
+
+    noResult.style.display = count===0 ? "block" : "none";
+}
+
+// EVENTS
+searchInput.addEventListener("keyup", filterData);
+categoryFilter.addEventListener("change", filterData);
+
+// DARK MODE
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+
+</script>
+
+</body>
+</html>
